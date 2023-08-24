@@ -1,3 +1,27 @@
-.review-container {
-  border: 5px solid red;
+* {
+  /* margin: 0; */
+  /* padding: 0; */
+}
+
+body {
+  font-family: "Commissioner", sans-serif;
+}
+
+.review-outer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 6.25rem;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.review-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-paragraph {
+  font-size: 2em;
+  font-weight: 400;
 }

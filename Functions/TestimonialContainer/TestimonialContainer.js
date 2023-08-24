@@ -43,11 +43,12 @@ const handleTestimonialCreator = (data) => {
       .classList.add("user-job-title");
 
     reviewOuterContainer
-      .appendChild(imageContainer)
-      .classList.add("review-image-container");
-    reviewOuterContainer
       .appendChild(reviewInfoContainer)
       .classList.add("review-info-container");
+
+    reviewOuterContainer
+      .appendChild(imageContainer)
+      .classList.add("review-image-container");
 
     // add all the created elements to the dynamic created div
     textContainer
