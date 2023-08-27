@@ -5,6 +5,8 @@ const handleTestimonialCreator = (data) => {
   const textContainer = document.querySelector("section");
 
   reviewData.map((user) => {
+    // create username container
+    const userContainer = document.createElement(`div`);
     // create dynamic img container
     const imageContainer = document.createElement(`div`);
     // create dynamic review container
@@ -26,6 +28,10 @@ const handleTestimonialCreator = (data) => {
     createUserImgContainer.setAttribute(`src`, user.userPhoto);
 
     // add the created elements
+    userContainer.appendChild(createUserParagraph).classList.add("user-info");
+
+    userContainer.appendChild(createUserJobTitle).classList.add("user-info");
+
     imageContainer
       .appendChild(createUserImgContainer)
       .classList.add("image-inner-container");
@@ -34,16 +40,20 @@ const handleTestimonialCreator = (data) => {
       .appendChild(createReviewParagraph)
       .classList.add("review-paragraph");
 
-    reviewInfoContainer
-      .appendChild(createUserParagraph)
-      .classList.add("user-paragraph");
+    // reviewInfoContainer
+    //   .appendChild(createUserParagraph)
+    //   .classList.add("user-info");
 
-    reviewInfoContainer
-      .appendChild(createUserJobTitle)
-      .classList.add("user-job-title");
+    // reviewInfoContainer
+    //   .appendChild(createUserJobTitle)
+    //   .classList.add("user-info");
 
     reviewOuterContainer
       .appendChild(reviewInfoContainer)
+      .classList.add("review-info-container");
+
+    reviewOuterContainer
+      .appendChild(userContainer)
       .classList.add("review-info-container");
 
     reviewOuterContainer
