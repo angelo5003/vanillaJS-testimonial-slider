@@ -2,68 +2,33 @@ const handleTestimonialCreator = (data) => {
   const reviewData = data;
 
   // target the div where you want to show/create elements
-  const textContainer = document.querySelector("section");
+  // const textContainer = document.querySelector("section");
+
+  const reviewContainer = document.querySelector(".slider-review-container");
+  const userContainer = document.querySelector(".slider-user-info");
+  const profileImgContainer = document.querySelector(".slider-img-container");
 
   reviewData.map((user) => {
-    // create username container
-    const userContainer = document.createElement(`div`);
-    // create dynamic img container
-    const imageContainer = document.createElement(`div`);
-    // create dynamic review container
-    const reviewInfoContainer = document.createElement(`div`);
-    // create a container for all new content that contains the other divs
-    const reviewOuterContainer = document.createElement(`div`);
-    // create the review paragraph
-    const createReviewParagraph = document.createElement(`p`);
-    createReviewParagraph.textContent = user.review;
-    // create userName paragraph
-    const createUserParagraph = document.createElement(`p`);
-    createUserParagraph.textContent = user.personName;
-    // create user job title
-    const createUserJobTitle = document.createElement(`p`);
-    createUserJobTitle.textContent = user.personTitle;
-    // create the user img container
-    const createUserImgContainer = document.createElement(`img`);
-    // Set the src attribute
-    createUserImgContainer.setAttribute(`src`, user.userPhoto);
+    // create review
+    const review = document.createElement(`p`);
+    review.textContent = user.review;
 
-    // add the created elements
-    userContainer.appendChild(createUserParagraph).classList.add("user-info");
+    reviewContainer.appendChild(review).classList.add("review");
 
-    userContainer.appendChild(createUserJobTitle).classList.add("user-info");
+    // create user info
+    const userName = document.createElement(`p`);
+    userName.textContent = user.userName;
+    userContainer.appendChild(userName).classList.add("user-name");
 
-    imageContainer
-      .appendChild(createUserImgContainer)
-      .classList.add("image-inner-container");
+    // create job title
+    const jobTitle = document.createElement(`p`);
+    jobTitle.textContent = user.jobTitle;
+    userContainer.appendChild(jobTitle).classList.add("user-job-title");
 
-    reviewInfoContainer
-      .appendChild(createReviewParagraph)
-      .classList.add("review-paragraph");
-
-    // reviewInfoContainer
-    //   .appendChild(createUserParagraph)
-    //   .classList.add("user-info");
-
-    // reviewInfoContainer
-    //   .appendChild(createUserJobTitle)
-    //   .classList.add("user-info");
-
-    reviewOuterContainer
-      .appendChild(reviewInfoContainer)
-      .classList.add("review-info-container");
-
-    reviewOuterContainer
-      .appendChild(userContainer)
-      .classList.add("review-info-container");
-
-    reviewOuterContainer
-      .appendChild(imageContainer)
-      .classList.add("review-image-container");
-
-    // add all the created elements to the dynamic created div
-    textContainer
-      .appendChild(reviewOuterContainer)
-      .classList.add("review-outer-container");
+    // create user image
+    const profileImg = document.createElement(`img`);
+    profileImg.setAttribute(`src`, user.userPhoto);
+    profileImgContainer.appendChild(profileImg).classList.add("user-img");
   });
 };
 

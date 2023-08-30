@@ -16,17 +16,65 @@ body {
   font-family: "Commissioner", sans-serif;
 }
 
-@media screen and (max-width: 799px) {
+.slider-inner-container {
+  border: 1px solid hsl(240, 18%, 77%);
+}
+
+.user-name {
+  color: hsl(240, 38%, 20%);
+  font-weight: 700;
+}
+
+.user-job-title {
+  color: hsl(240, 18%, 77%);
+}
+
+.prev-btn,
+.next-btn {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  padding: 0.6rem;
+}
+
+.review-btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 9.3rem;
+  border: 1px solid hsl(240, 18%, 77%);
+  width: 6.25rem;
+  border-radius: 3.1rem;
+}
+
+@media screen and (max-width: 860px) {
   .slider-inner-container {
     grid-template-rows: auto auto; /* Set two rows for the image and the review */
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    border: 1px solid red;
-    padding: 10px;
+    padding: 0.62rem;
     justify-content: center;
     text-align: center;
     align-items: center;
+  }
+
+  .review-btn-container {
+    margin: 0 auto;
+    margin-top: 5px;
+    position: absolute;
+    top: 18.75rem;
+    left: 0;
+    right: 0;
+    margin-top: 1.5rem;
+  }
+
+  .user-img {
+    width: 18.75rem;
+    margin: 0.62rem;
   }
 
   .slider-img-container,
@@ -46,9 +94,13 @@ body {
     width: 15.6rem;
     margin: 0 auto;
   }
+
+  .slider-review-container {
+    margin: 0.62rem;
+  }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 861px) {
   .slider-outer-container {
     width: 68.75rem;
   }
@@ -56,7 +108,6 @@ body {
   .slider-inner-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid red;
     padding: 10px;
   }
 
@@ -74,7 +125,13 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 250px;
+    width: 15.6rem;
     font-size: 1.2em;
+  }
+
+  .review-btn-container {
+    position: absolute;
+    bottom: 1.56rem;
+    background-color: #ffffffff;
   }
 }
